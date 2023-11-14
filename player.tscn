@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d03th4sq2ag23"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_i0kb8"]
+[ext_resource type="Texture2D" uid="uid://fk768xe8q3au" path="res://Graphics/playerShip2_blue.png" id="2_qslak"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymroo"]
+radius = 8.0
+
+[node name="Player" type="RigidBody2D"]
+position = Vector2(442, 230)
+collision_layer = 2
+max_contacts_reported = 100
+contact_monitor = true
+script = ExtResource("1_i0kb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_qslak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(2.93148, 3.64372)
+shape = SubResource("CircleShape2D_ymroo")
+
+[node name="BulletSpawnSpot" type="Node2D" parent="."]
+position = Vector2(0, -28)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

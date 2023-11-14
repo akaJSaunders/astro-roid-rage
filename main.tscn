@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpabgrv7274ub"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_5ios1"]
+[ext_resource type="Texture2D" uid="uid://bgvku8ukcx0i3" path="res://Graphics/darkPurple.png" id="2_d8wut"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_5ios1")
+
+[node name="DarkPurple" type="Sprite2D" parent="."]
+position = Vector2(400.25, 305.5)
+scale = Vector2(3.23242, 2.44141)
+texture = ExtResource("2_d8wut")

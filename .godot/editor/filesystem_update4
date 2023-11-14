@@ -1,0 +1,11 @@
+res://player.tscn
+res://main.tscn
+res://Player.gd
+res://RigidBody2DWrap.gd
+res://Asteroid.gd
+res://main.gd
+res://asteroid_big.tscn
+res://Utility.gd
+res://bullet.tscn
+res://bullet.gd
+res://asteroid_medium.tscn
