@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpabgrv7274ub"]
+[gd_scene load_steps=4 format=3 uid="uid://dpabgrv7274ub"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5ios1"]
 [ext_resource type="Texture2D" uid="uid://bgvku8ukcx0i3" path="res://Graphics/darkPurple.png" id="2_d8wut"]
+[ext_resource type="PackedScene" uid="uid://d0j3c414ubv0" path="res://main_ui.tscn" id="3_666oo"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_5ios1")
 
-[node name="DarkPurple" type="Sprite2D" parent="."]
-position = Vector2(400.25, 305.5)
+[node name="Background Stars" type="Sprite2D" parent="."]
+position = Vector2(401.25, 305.5)
 scale = Vector2(3.23242, 2.44141)
 texture = ExtResource("2_d8wut")
+
+[node name="MainUI" parent="." instance=ExtResource("3_666oo")]
+z_index = 1
+
+[connection signal="level_changed" from="." to="MainUI" method="_on_main_level_changed"]
+[connection signal="lives_changed" from="." to="MainUI" method="_on_main_lives_changed"]
+[connection signal="score_changed" from="." to="MainUI" method="_on_main_score_changed"]
