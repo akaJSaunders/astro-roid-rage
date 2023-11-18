@@ -35,10 +35,8 @@ func _on_restart_button_pressed():
 	get_parent().setup_new_game()
 	game_over_panel.hide()
 
-
 func _on_exit_button_pressed():
 	get_tree().quit(0)
-
 
 func _on_main_level_complete(score, lives, level):
 	new_level_score.text = "Score Earned: %d" % score
@@ -46,3 +44,6 @@ func _on_main_level_complete(score, lives, level):
 	new_level_header.text = "level %d complete!" % level
 	level_complete_panel.show()
 
+func _on_continue_pressed():
+	get_parent().next_level()
+	level_complete_panel.hide()

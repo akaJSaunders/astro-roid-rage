@@ -48,6 +48,7 @@ func setup_new_game():
 	lives = 3
 	score = 0
 	level = 0
+	asteroid_number = 2
 	setup_new_level()
 	
 func cleanup_game():
