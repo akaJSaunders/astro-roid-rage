@@ -3,8 +3,5 @@ res://player.tscn
 res://asteroid_big.tscn
 res://bullet.tscn
 res://asteroid_medium.tscn
-res://control.tscn
 res://main_ui.tscn
-res://main.gd
-res://main_ui.gd
-res://Asteroid.gd
+res://Player.gd
