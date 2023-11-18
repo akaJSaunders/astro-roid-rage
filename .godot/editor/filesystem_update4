@@ -5,3 +5,4 @@ res://bullet.tscn
 res://asteroid_medium.tscn
 res://main_ui.tscn
 res://Player.gd
+res://main_ui.gd

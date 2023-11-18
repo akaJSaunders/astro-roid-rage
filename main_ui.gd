@@ -29,3 +29,7 @@ func _on_main_game_over():
 func _on_restart_button_pressed():
 	get_parent().setup_new_game()
 	game_over_panel.hide()
+
+
+func _on_exit_button_pressed():
+	get_tree().quit(0)
