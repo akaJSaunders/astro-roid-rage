@@ -9,4 +9,5 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body.was_shot:
 		body.was_shot.emit()
+		get_parent().add_to_score()
 		queue_free()

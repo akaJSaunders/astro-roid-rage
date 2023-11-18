@@ -93,5 +93,5 @@ func spawn_asteroid():
 	node.position = viewport_size/2.0 + (Utility.randomUnitVector2() * randf_range(asteroid_spawn_range_min, asteroid_spawn_range_max))
 	asteroid_container.call_deferred('add_child',node)
 	
-func add_to_score(n):
-	score += n
+func add_to_score():
+	score += 1
