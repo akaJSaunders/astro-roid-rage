@@ -1,9 +1,9 @@
-Node2D
 MarginContainer
 VBoxContainer
 Button
 Label
 Panel
+Node2D
 HBoxContainer
 CollisionShape2D
 Sprite2D

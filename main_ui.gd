@@ -4,7 +4,12 @@ extends Control
 @export var level_label : Label
 @export var lives_label : Label
 
+@export var new_level_score : Label
+@export var new_level_lives : Label
+@export var new_level_header : Label
+
 @export var game_over_panel : Panel
+@export var level_complete_panel : Panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,3 +38,11 @@ func _on_restart_button_pressed():
 
 func _on_exit_button_pressed():
 	get_tree().quit(0)
+
+
+func _on_main_level_complete(score, lives, level):
+	new_level_score.text = "Score Earned: %d" % score
+	new_level_lives.text = "Lives Remaining: %d" % lives
+	new_level_header.text = "level %d complete!" % level
+	level_complete_panel.show()
+

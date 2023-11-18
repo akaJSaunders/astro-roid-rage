@@ -20,5 +20,7 @@ z_index = 1
 
 [connection signal="game_over" from="." to="MainUI" method="_on_main_game_over"]
 [connection signal="level_changed" from="." to="MainUI" method="_on_main_level_changed"]
+[connection signal="level_complete" from="." to="MainUI" method="_on_main_level_complete"]
 [connection signal="lives_changed" from="." to="MainUI" method="_on_main_lives_changed"]
+[connection signal="score_changed" from="." to="." method="_on_score_changed"]
 [connection signal="score_changed" from="." to="MainUI" method="_on_main_score_changed"]

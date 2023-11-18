@@ -5,6 +5,7 @@ signal level_changed
 signal lives_changed
 
 signal game_over
+signal level_complete
 
 var score:
 		get:
@@ -30,7 +31,7 @@ var lives:
 var asteroid_big_scene = preload('res://asteroid_big.tscn')
 var asteroid_spawn_range_min = 200
 var asteroid_spawn_range_max = 500
-var num_asteroids = 4
+var asteroid_number = 2
 
 var player_scene = preload('res://player.tscn')
 var player_node : Node2D = null
@@ -44,10 +45,10 @@ func _ready():
 	
 func setup_new_game():
 	cleanup_game()
-	lives = 1
+	lives = 3
 	score = 0
 	level = 0
-	setup_new_level(num_asteroids)
+	setup_new_level()
 	
 func cleanup_game():
 	if player_node:
@@ -72,10 +73,10 @@ func game_is_over():
 
 	game_over.emit()
 
-func setup_new_level(asteroid_number):
+func setup_new_level():
 	level += 1
 	spawn_player()
-	
+
 	for i in asteroid_number:
 		spawn_asteroid()
 		
@@ -95,3 +96,16 @@ func spawn_asteroid():
 	
 func add_to_score():
 	score += 1
+	
+func increase_dificulty():
+	asteroid_number += 2
+
+func _on_score_changed(_score):
+	print(asteroid_container.get_child_count())
+	if asteroid_container.get_child_count() == 1 && score > 0:
+		level_complete.emit(score, lives, level)
+
+func next_level():
+	cleanup_game()
+	increase_dificulty()
+	setup_new_level()
