@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main_ui.gd" id="1_xcf6h"]
 
-[node name="MainUI" type="Control" node_paths=PackedStringArray("score_label", "level_label", "lives_label", "new_level_score", "new_level_lives", "new_level_header", "game_over_panel", "level_complete_panel")]
+[node name="MainUI" type="Control" node_paths=PackedStringArray("score_label", "level_label", "lives_label", "new_level_score", "new_level_lives", "new_level_header", "game_info", "game_over_panel", "level_complete_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,33 +10,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xcf6h")
-score_label = NodePath("HBoxContainer/Score")
-level_label = NodePath("HBoxContainer/Level")
-lives_label = NodePath("HBoxContainer/Lives")
+score_label = NodePath("GameInfo/Score")
+level_label = NodePath("GameInfo/Level")
+lives_label = NodePath("GameInfo/Lives")
 new_level_score = NodePath("LevelCompletePopup/MarginContainer/VBoxContainer/Points Earned")
 new_level_lives = NodePath("LevelCompletePopup/MarginContainer/VBoxContainer/Lives Remaining")
 new_level_header = NodePath("LevelCompletePopup/Label")
+game_info = NodePath("GameInfo")
 game_over_panel = NodePath("GameOverPopup")
 level_complete_panel = NodePath("LevelCompletePopup")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="GameInfo" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 26.0
 grow_horizontal = 2
 
-[node name="Score" type="Label" parent="HBoxContainer"]
+[node name="Score" type="Label" parent="GameInfo"]
 layout_mode = 2
 size_flags_horizontal = 2
 text = "Score: 000"
 
-[node name="Level" type="Label" parent="HBoxContainer"]
+[node name="Level" type="Label" parent="GameInfo"]
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Level: 000"
 
-[node name="Lives" type="Label" parent="HBoxContainer"]
+[node name="Lives" type="Label" parent="GameInfo"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "Lives: 000"

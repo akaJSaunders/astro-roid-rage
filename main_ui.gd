@@ -8,6 +8,7 @@ extends Control
 @export var new_level_lives : Label
 @export var new_level_header : Label
 
+@export var game_info : HBoxContainer
 @export var game_over_panel : Panel
 @export var level_complete_panel : Panel
 

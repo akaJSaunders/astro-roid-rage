@@ -4,6 +4,7 @@ signal score_changed
 signal level_changed
 signal lives_changed
 
+signal start_game
 signal game_over
 signal level_complete
 
